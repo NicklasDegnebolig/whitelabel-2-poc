@@ -1,14 +1,21 @@
-export const useProducts = () => {
+type  products = {
+    title: string,
+    description: string,
+    price: number,
+    image: string,
+  }
+
+export const useProducts = ()  => {
   const baseUrl = 'https://fakestoreapi.com/products'
 
-  const getAllProducts = async () => {
-    const products = await useFetch(baseUrl)
-    return products.data
+  const getAllProducts  =  async  ()  => {
+    const products = await useFetch<products>(baseUrl)
+    return products.data 
   }
 
   const getSingleProduct = async (routeId: any) => {
  
-    const product = await useFetch(`${baseUrl}/${routeId}`)
+    const product = await useFetch<products>(`${baseUrl}/${routeId}`)
     
 
     if (!product.data.value) {

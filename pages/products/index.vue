@@ -10,12 +10,13 @@
 
 <script setup>
 const products = await useProducts().getAllProducts()
+const config = useAppConfig()
 
 definePageMeta({
   layout: 'products',
 })
 useHead({
-  title: 'Dwarf Whitelabel | Merch',
+  title: `${config.logo} | Merch`,
   meta: [{ name: 'description', content: 'Nuxt 3 Merch' }],
 })
 </script>

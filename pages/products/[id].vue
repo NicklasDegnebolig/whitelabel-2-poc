@@ -1,7 +1,7 @@
 <template>
   <div>
     <Head>
-      <Title>Dwarf Whitelabel | {{ product.title }}</Title>
+      <Title>{{ config.logo }} | {{ product.title }}</Title>
       <Meta name="description" :content="product.description" />
     </Head>
 
@@ -12,7 +12,7 @@
 <script setup>
 const { id } = useRoute().params
 const product = await useProducts().getSingleProduct(id)
-
+const config = useAppConfig()
 definePageMeta({
   layout: 'products',
 })

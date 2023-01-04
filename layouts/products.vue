@@ -2,8 +2,8 @@
   <div>
     <header class="shadow-sm bg-white">
       <nav class="container mx-auto p-4">
-        <NuxtLink to="/products" class="font-bold"
-          >Dwarf Whitelabel Merch</NuxtLink
+        <NuxtLink to="/products" class="font-bold">
+          {{ config.logo }} Merch</NuxtLink
         >
       </nav>
     </header>
@@ -19,6 +19,10 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+const config = useAppConfig()
+</script>
 
 <style scoped>
 .router-link-exact-active {
