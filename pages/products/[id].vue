@@ -11,7 +11,8 @@
 
 <script setup>
 const { id } = useRoute().params
-const product = await useProducts().getSingleProduct(id)
+const product = await useBazo().products.getSingleProduct(id)
+
 const config = useAppConfig()
 definePageMeta({
   layout: 'products',
